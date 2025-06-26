@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>스크래치 ID 선택</title>
+    <style>
+      html, body {
+        margin: 0; padding: 0;
+        height: 100%; overflow: hidden;
+      }
+      iframe {
+        width: 100vw;
+        height: 90vh;
+        border: none;
+      }
+      #inputArea {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="inputArea">
+      <input type="text" id="scratchId" placeholder="스크래치 ID 입력">
+      <button onclick="loadProject()">실행</button>
+    </div>
+    <iframe id="scratchFrame" src=""></iframe>
+
+    <script>
+      function loadProject() {
+        const id = document.getElementById("scratchId").value;
+        const frame = document.getElementById("scratchFrame");
+        frame.src = `https://scratch.mit.edu/projects/${id}/embed`;
+      }
+    </script>
+  </body>
+</html>
